@@ -10,3 +10,5 @@ edition = "2021"
 [lib]
 name = "rust_lib"
 path = "src/lib.rs"
+crate-type = ["cdylib"]
+# TODO: something else?
