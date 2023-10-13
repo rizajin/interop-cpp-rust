@@ -10,3 +10,10 @@ link_directories(${RUST_LIB_DIR})
 
 add_executable(cpp-user src/main.cpp)
 target_link_libraries(cpp-user rust_lib)
+
+add_custom_command(
+    TARGET cpp-user POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    "${RUST_LIB_DIR}/rust_lib.dll"
+    "${CMAKE_BINARY_DIR}"
+)
