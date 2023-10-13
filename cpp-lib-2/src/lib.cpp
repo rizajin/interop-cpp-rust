@@ -4,4 +4,12 @@
 #define COOLEST_API __declspec(dllimport)
 #endif
 
-// TODO: C-Linkage stuff.. DIY.
+#include <cstdint>
+
+// some stuff to send cross
+struct Data
+{
+    const char* d;
+    int32_t length;
+};
+
